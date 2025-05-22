@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestão de Usuários</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="container">
+    <h1>Gestão de Usuários</h1>
+
+    <!-- Controles da API -->
+    <div class="api-controls">
+        <button id="getAllBtn" class="btn btn-api">Obter Todos</button>
+        <div class="get-by-id">
+            <input type="number" id="userIdInput" placeholder="ID do usuário">
+            <button id="getByIdBtn" class="btn btn-api">Obter por ID</button>
+        </div>
+    </div>
+
+    <!-- Formulário -->
+    <div class="form-container">
+        <h2 id="form-title">Adicionar Usuário</h2>
+        <form id="usuarioForm">
+            <input type="hidden" id="usuarioId">
+
+            <div class="form-group">
+                <label for="nome">Nome:</label>
+                <input type="text" id="nome" required>
+            </div>
+
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" required>
+            </div>
+
+            <div class="form-group">
+                <label for="dataNascimento">Data de Nascimento:</label>
+                <input type="date" id="dataNascimento" required>
+            </div>
+
+            <div class="form-group">
+                <label for="password">Senha:</label>
+                <input type="password" id="password" required>
+            </div>
+
+            <button type="submit" class="btn btn-primary">Salvar</button>
+            <button type="button" id="cancelBtn" class="btn btn-secondary">Cancelar</button>
+        </form>
+    </div>
+
+    <!-- Resultados -->
+    <div class="results">
+        <h2>Resultados</h2>
+        <div id="singleUserResult" class="user-detail hidden"></div>
+        <table id="usuariosTable">
+            <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nome</th>
+                <th>Email</th>
+                <th>Data Nasc.</th>
+                <th>Ações</th>
+            </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </div>
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>
